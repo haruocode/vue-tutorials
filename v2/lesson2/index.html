@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    私の名前は{{ persons[1].name }}です。<br/>
+    年齢は{{ persons[1].age }}歳です。<br/>
+    住所は{{ persons[1].address.prefecture }}{{ persons[1].address.city }}
+    {{ persons[1].address.town }}{{ persons[1].address.other }}です。
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello VueJS !!!',
+        greeting: 'こんばんわ！',
+        persons: [
+          {
+            name: '吉田',
+            age: 39,
+            address: {
+              prefecture: '大阪府',
+              city: '大阪市',
+              town: '大阪町',
+              other: '1丁目1番地'
+            }
+          },
+          {
+            name: '山田',
+            age: 24,
+            address: {
+              prefecture: '京都府',
+              city: '大阪市',
+              town: '大阪町',
+              other: '1丁目1番地'
+            }
+          },
+          {
+            name: '鈴木',
+            age: 27,
+            address: {
+              prefecture: '東京都',
+              city: '大阪市',
+              town: '大阪町',
+              other: '1丁目1番地'
+            }
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
