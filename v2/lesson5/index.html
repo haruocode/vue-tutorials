@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <a v-bind:href="url">未成年はこちら</a>
+
+    <div>
+      <img v-bind:src="imagePath" :width="width" />
+    </div>
+
+    <div>
+      <button @click="clickDogButton">イヌ</button>
+      <button @click="clickCatButton">ネコ</button>
+      <button @click="widenImage">幅を600にする</button>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        url: 'https://www.yahoo.co.jp/',
+        imagePath: '',
+        width: 100
+      },
+      methods: {
+        clickDogButton: function() {
+          this.imagePath = 'https://d10tw3woq6mt3i.cloudfront.net/wp-content/uploads/2019/09/GettyImages-936318600-1024x678.jpg'
+        },
+        clickCatButton: function() {
+          this.imagePath = 'https://i.ytimg.com/vi/9dHRF55BC7s/maxresdefault.jpg'
+        },
+        widenImage: function() {
+          this.width = 600
+        }
+      }
+    })
+  </script>
+</body>
+</html>
