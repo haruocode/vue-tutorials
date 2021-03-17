@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <h2>テキストボックス</h2>
+      <input type="text" v-model="user" /><br/>
+      {{ user }}
+    </div>
+
+    <div>
+      <h2>テキストエリア</h2>
+      <textarea v-model="article"></textarea><br/>
+      <pre>{{ article }}</pre>
+    </div>
+
+    <div>
+      <h2>趣味</h2>
+      <input type="checkbox" v-model="hobby" value="1" />音楽<br/>
+      <input type="checkbox" v-model="hobby" value="2" />スポーツ<br/>
+      <input type="checkbox" v-model="hobby" value="3" />映画<br/>
+      <p>{{ hobby }}</p>
+    </div>
+
+    <div>
+      <h2>フルーツ</h2>
+      <input type="radio" v-model="fruit" value="🍎" />リンゴ<br/>
+      <input type="radio" v-model="fruit" value="🍊" />ミカン<br/>
+      <input type="radio" v-model="fruit" value="🍍" />パイナップル<br/>
+      {{ fruit }}
+    </div>
+
+    <div>
+      <h2>友達</h2>
+      <select v-model="selected">
+        <option value="">選択してください</option><br/>
+        <option v-for="friend in friends" :value="friend.name">{{ friend.name }}</option>
+      </select><br/>
+      {{ selected }}
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        user: '',
+        article: '',
+        hobby: [],
+        fruit: null,
+        selected: '',
+        friends: [
+          {
+            id: 1,
+            name: '吉田'
+          },
+          {
+            id: 2,
+            name: '山田'
+          },
+          {
+            id: 3,
+            name: '木村'
+          },
+          {
+            id: 4,
+            name: '榎本'
+          },
+          {
+            id: 5,
+            name: '青木'
+          },
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
