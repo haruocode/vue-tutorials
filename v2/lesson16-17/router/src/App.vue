@@ -4,13 +4,18 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/privacy">プライバシーポリシー</router-link> |
-      <router-link :to="{ name: 'user', params: { id: 3 }, query: { q: 'hogehoge' } }">ユーザー１</router-link>
+      <router-link :to="{ name: 'user', params: { id: 1 }, query: { q: 'hogehoge' } }">ユーザー1</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
-<style>
+<style scoped>
+#nav a.router-link-exact-active {
+  color: deeppink;
+  font-size: 30px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,9 +31,5 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
